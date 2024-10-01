@@ -1,6 +1,6 @@
 ---
 title: "Keyron Linarez"
-image: D:/RStudio Projects/KeyronLinarez/cool-3.webp
+image: cool-3.webp
 toc: false
 about: 
   template: jolla
