@@ -36,4 +36,3 @@ ggplot(data = house, aes(x = `Age Group`, y = Orders, color = Amount)) +
   ) + theme_minimal()
 
 ```
-
