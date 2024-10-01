@@ -1,9 +1,8 @@
 ---
-title: "Testing Website"
+title: "Keyron Linarez"
 ---
 
-This is a Quarto website.
-
+Hello! I am Keyron Linarez, a Computer Science and Math student attending Pomona College. I have a deep love for history, social justice movements, and music (especially disruptive music that embodies all three).
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 ```{r}
