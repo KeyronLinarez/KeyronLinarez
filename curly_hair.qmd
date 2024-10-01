@@ -1,0 +1,39 @@
+---
+title: "Diwali Sales Data"
+execute: 
+  warning: false
+  message: false
+---
+
+```{r}
+#| echo: false
+library(tidyverse)
+```
+
+Below, you will find a plot showcasing the number of purchases for different age groups during Diwali, the festival of lights. The color gradient shows the amount in Indian rupees spent by each customer, revealing how age group impacts total rupees spent with respect to total orders made.
+
+```{r echo = T, results = 'hide'}
+
+
+library(tidyverse)
+library(dplyr)
+library(httr2)
+
+house <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-14/diwali_sales_data.csv')
+
+colnames(house)
+age_group <- house$`Age Group`
+Orders <- house$Orders
+Amount <- house$Amount
+
+
+ggplot(data = house, aes(x = `Age Group`, y = Orders, color = Amount)) +
+  geom_col() +   
+  labs(
+    x = "Age Group",
+    y = "Number of Orders",
+    title = "Diwali Orders Made by Age"
+  ) + theme_minimal()
+
+```
+

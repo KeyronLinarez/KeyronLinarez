@@ -11,6 +11,8 @@ website:
       - about.qmd
       - href: mario_kart.qmd
         text: TidyTuesday1
+      - href: curly_hair.qmd
+        text: TidyTuesday2
 
 format:
   html:

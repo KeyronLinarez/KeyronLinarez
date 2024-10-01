@@ -36,7 +36,7 @@ ggplot(data = pride_index, aes(x = community_type, y = rating)) +
     x = "Community Type",
     y = "Rating",
     title = "Campus Pride Index, Sorted by Community Size"
-  )
+  ) + theme_minimal()
 
 
 ```
