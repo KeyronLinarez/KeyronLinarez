@@ -1,3 +1,46 @@
 ---
-title: "Untitled"
+title: "Campus Pride Index Analysis"
+execute: 
+  warning: false
+  message: false
+---
+
+
+```{r}
+#| echo: false
+library(tidyverse)
+```
+
+Below, you will find a box plot highlighting the Campus Pride Index's scores varying across campus community sizes. There is a correlation between community size and ratings, with smaller communities generally scoring lower among queer students (with a few notable exceptions).
+
+```{r echo = T, results = 'hide'}
+
+
+library(tidyverse)
+library(dplyr)
+library(httr2)
+
+tuesdata <- tidytuesdayR::tt_load(2024, week = 24)
+
+pride_index <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-11/pride_index.csv')
+pride_index_tags <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-11/pride_index_tags.csv')
+
+colnames(pride_index)
+
+community_type <- pride_index$community_type
+rating <- pride_index$rating
+
+ggplot(data = pride_index, aes(x = community_type, y = rating)) +
+  geom_boxplot() +   
+  labs(
+    x = "Community Type",
+    y = "Rating",
+    title = "Campus Pride Index, Sorted by Community Size"
+  )
+
+
+```
+
+---
+
 ---

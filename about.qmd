@@ -1,8 +1,8 @@
 ---
-title: "Hello :3"
+title: "About"
 ---
 
-About this site
+I will be uploading some projects (personal and/or academic) to the following pages. As an experiment in R, I will add two graphs analyzing some data sets.
 
 ```{r}
 1 + 1

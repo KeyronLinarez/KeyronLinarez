@@ -9,6 +9,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: mario_kart.qmd
+        text: TidyTuesday1
 
 format:
   html:

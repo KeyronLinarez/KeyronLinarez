@@ -9,8 +9,15 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Hello :3",
+    "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "I will be uploading some projects (personal and/or academic) to the following pages. As an experiment in R, I will add two graphs analyzing some data sets.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "mario_kart.html",
+    "href": "mario_kart.html",
+    "title": "Campus Pride Index Analysis",
+    "section": "",
+    "text": "Below, you will find a box plot highlighting the Campus Pride Index’s scores varying across campus community sizes. There is a correlation between community size and ratings, with smaller communities generally scoring lower among queer students (with a few notable exceptions).\n\nlibrary(tidyverse)\nlibrary(dplyr)\nlibrary(httr2)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2024, week = 24)\n\npride_index &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-11/pride_index.csv')\npride_index_tags &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-11/pride_index_tags.csv')\n\ncolnames(pride_index)\n\ncommunity_type &lt;- pride_index$community_type\nrating &lt;- pride_index$rating\n\nggplot(data = pride_index, aes(x = community_type, y = rating)) +\n  geom_boxplot() +   \n  labs(\n    x = \"Community Type\",\n    y = \"Rating\",\n    title = \"Campus Pride Index, Sorted by Community Size\"\n  )"
   }
 ]
