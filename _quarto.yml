@@ -13,6 +13,8 @@ website:
         text: TidyTuesday1
       - href: curly_hair.qmd
         text: TidyTuesday2
+      - href: project3.qmd
+        text: Projects
 
 format:
   html:

@@ -8,9 +8,9 @@ about:
   image-width: 17em
   links:
     - text: LinkedIn
-      href: https://www.linkedin.com/in/samanthacsik/
+      href: https://www.linkedin.com/in/keyron/
     - text: GitHub
-      href: https://github.com/samanthacsik
+      href: https://github.com/KeyronLinarez
     - text: Email
       href: mailto:scsik@ucsb.edu
 ---
