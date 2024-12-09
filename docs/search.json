@@ -67,7 +67,14 @@
     "href": "presentation.html#updating-project-4",
     "title": "Project 5 - Website Updates",
     "section": "Updating Project 4",
-    "text": "Updating Project 4\n\nAdded proper citations + added more descriptive comments\nAdded more narrative! Made this much easier to read if you’re not coming from this class\nFixed a bug caused by joining on identifier instead of SUbjectNumber"
+    "text": "Updating Project 4\n\nAdded proper citations + added more descriptive comments\nAdded more narrative! Made this much easier to read if you’re not coming from this class\nFixed a bug caused by joining on identifier instead of SubjectNumber"
+  },
+  {
+    "objectID": "presentation.html#tidy-tuesday",
+    "href": "presentation.html#tidy-tuesday",
+    "title": "Project 5 - Website Updates",
+    "section": "Tidy Tuesday!",
+    "text": "Tidy Tuesday!\n\nI’ve been to a few tidy tuesdays!\nThese were super easy to pop onto my website\nAdded this cool regex assignment to puff up the data science project"
   },
   {
     "objectID": "presentation.html#site-clean-up-and-tweaks",
@@ -81,7 +88,7 @@
     "href": "presentation.html#to-do",
     "title": "Project 5 - Website Updates",
     "section": "To-Do",
-    "text": "To-Do\n\nGet that custom domain name!\nAdd my coding projects: I want this to be a portfolio/project website for recruiters\nAdd more flair + shiny stuff\n\nThank you!"
+    "text": "To-Do\n\nGet that custom domain name!\nAdd my coding projects: I want this to be a portfolio/project website for recruiters\nAdd more flair + shiny stuff\nThank you!"
   },
   {
     "objectID": "project3.html",

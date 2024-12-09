@@ -47,9 +47,19 @@ For my original attempt at creating a null sampling distribution, I incorrectly 
 
 -   Added proper citations + added more descriptive comments
 -   Added more narrative! Made this much easier to read if you're not coming from this class
--   Fixed a bug caused by joining on identifier instead of SUbjectNumber
+-   Fixed a bug caused by joining on identifier instead of SubjectNumber
 
 ------------------------------------------------------------------------
+
+
+## Tidy Tuesday!
+
+-   I've been to a few tidy tuesdays!
+-   These were super easy to pop onto my website
+-   Added this cool regex assignment to puff up the data science project
+
+------------------------------------------------------------------------
+
 
 ## Site clean-up and tweaks
 
@@ -66,6 +76,6 @@ For my original attempt at creating a null sampling distribution, I incorrectly 
 -   Add my coding projects: I want this to be a portfolio/project website for recruiters
 -   Add more flair + shiny stuff
 
-Thank you!
+- Thank you!
 
 ------------------------------------------------------------------------
