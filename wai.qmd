@@ -1,4 +1,3 @@
-
 ---
 title: "SQL Practice with WAI Database"
 author: Keyron Linarez
@@ -23,8 +22,6 @@ PI_Info <- tbl(con_wai, "PI_Info")
 Subjects <- tbl(con_wai, "Subjects")
 
 ```
-
-
 
 ```{sql}
 #| connection: con_wai
@@ -85,11 +82,11 @@ GROUP BY Frequency, Identifier
 #| output.var: "final_subjects"
 
 
-SELECT s.Identifier, s.Sex as sex, AVG(Absorbance) AS avgAbsorb, m.Frequency
+SELECT s.SubjectNumber, s.Sex as sex, AVG(Absorbance) AS avgAbsorb, m.Frequency
 FROM Subjects as s
 LEFT JOIN Measurements as m ON m.Identifier = s.Identifier
 WHERE m.Identifier IN ("Shaver_2013")
-GROUP BY s.Identifier, s.Sex, m.Frequency;
+GROUP BY s.SubjectNumber, s.Sex, m.Frequency;
 
 ```
 
@@ -112,7 +109,7 @@ scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1)) +
 DBI::dbDisconnect(con_wai, shutdown = TRUE)
 
 ```
+
 These two graphs show the differences betwen mean absorption between males and females measured from the Shaver 2013 study. As you can see, not much difference was recorded.
 
 Thank you!
-

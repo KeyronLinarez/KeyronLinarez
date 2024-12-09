@@ -88,7 +88,8 @@ simulated_differences |>
   geom_histogram(binwidth = 1000, fill = "black", color = "white") + 
   geom_vline(xintercept = avg_diff_val, color = "red") + 
   labs(x = "The difference of mean cost of attendance betwen Public and Private Universities",
-       title = "Sampling Distribution of Permuted Differences")
+       title = "Sampling Distribution of Permuted Differences") +
+  theme_dark()
 
 p_val_avg <- simulated_differences |> 
   summarize(p_val_ave = mean(diff_perm > avg_diff_val))
@@ -122,7 +123,8 @@ median_simulated_differences |>
   geom_histogram(binwidth = 1000, fill = "black", color = "white") + 
   geom_vline(xintercept = med_diff_val, color = "cyan") + 
   labs(x = "The difference of median cost of attendance betwen Public and Private Universities",
-       title = "Sampling Distribution of Permuted Differences")
+       title = "Sampling Distribution of Permuted Differences") +
+  theme_dark()
   
 p_val_med <- median_simulated_differences |> 
   summarize(p_val_med = mean(median_diff_perm > med_diff_val))

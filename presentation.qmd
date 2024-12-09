@@ -17,7 +17,7 @@ execute:
 
 ## Goals
 
-- Fix Project 3 and 5
+- Fix Project 3 and 4
 - Try to get a custom domain name!
 - Clean up my about me section
 - Make everything fit with a dark theme
@@ -29,9 +29,7 @@ execute:
 - Github pages allows us to use custom domain names!
 - This requires us to purchase a custom domain, and to verify it through github
 - I've begun the process of buying a domain, and spent some time researching how to verify it. However, as you can see, It hasn't happened yet (more time and money needed)
-
----
-![Domain Link](D:/RStudio Projects/KeyronLinarez/buying_domain.PNG)
+- ![](D:/RStudio Projects/KeyronLinarez/buying_domain.PNG)
 ------------------------------------------------------------------------
 
 ## Fixing Project 3
@@ -40,22 +38,34 @@ For my original attempt at creating a null sampling distribution, I incorrectly 
 
 - I fixed this!
 - Now it's very obvious that the null hypothesis is FALSE
+- Updated colors and added descriptive text to fit with dark theme
+- ![](D:/RStudio Projects/KeyronLinarez/project3_snap.PNG)
+
 ------------------------------------------------------------------------
 
 ## Updating Project 4
 
--   Get in bed - Count sheep
+-   Added proper citations + added more descriptive comments
+-   Added more narrative! Made this much easier to read if you're not coming from this class
+-   Fixed a bug caused by joining on identifier instead of SUbjectNumber
 
 ------------------------------------------------------------------------
 
 ## Site clean-up and tweaks
 
--   Turn off alarm - Get out of bed
+-   Added the correct links to my socials + headers
+-   Removed error messages
+-   Added images + Dark theme
+-   Consolidated all DS2R projects together
 
 ------------------------------------------------------------------------
 
 ## To-Do
 
--   Get in bed - Count sheep
+-   Get that custom domain name!
+-   Add my coding projects: I want this to be a portfolio/project website for recruiters
+-   Add more flair + shiny stuff
+
+Thank you!
 
 ------------------------------------------------------------------------
