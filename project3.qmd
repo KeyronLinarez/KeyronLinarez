@@ -1,5 +1,5 @@
 ---
-title: "Project 3"
+title: "Analyzing California School's Tuition Costs"
 execute: 
   warning: false
   message: true

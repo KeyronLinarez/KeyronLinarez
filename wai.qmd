@@ -1,6 +1,6 @@
 
 ---
-title: "Project 4"
+title: "SQL Practice with WAI Database"
 author: Keyron Linarez
 execute: 
   warning: false

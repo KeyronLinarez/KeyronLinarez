@@ -9,16 +9,18 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: mario_kart.qmd
-        text: TidyTuesday1
-      - href: curly_hair.qmd
-        text: TidyTuesday2
-        
-      - text: Projects 
+      
+      - text: Data Science Projects 
         menu:
-          - project2.qmd
-          - project3.qmd
-          - wai.qmd
+        - mario_kart.qmd
+        - curly_hair.qmd
+        - project2.qmd
+        - project3.qmd
+        - wai.qmd
+
+      - text: Coding Projects
+        menu: 
+          - presentation.qmd
         
 
 format:

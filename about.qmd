@@ -1,9 +1,17 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-I will be uploading some projects (personal and/or academic) to the following pages. As an experiment in R, I will add two graphs analyzing some data sets.
+Hello, my name is Keyron (they/them), I am a current senior studying computer science at Pomona college. I am a first generation student and a Questbridge scholar, and I really like video games :3
 
-```{r}
-1 + 1
-```
+I've included some of my projects for you to see on my website: research, data science, and programming projects from the last several years. Thanks for stopping by!
+
+---
+image: guitar.JPG
+toc: false
+about: 
+  template: jolla
+  image-shape: rectangle
+  image-width: 35em
+  image-title: Playing my acoustic :)
+---

@@ -1,0 +1,47 @@
+---
+title: Project 5 - Website Updates
+author: Keyron
+format:
+  revealjs:
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Goals
+- Turn off alarm - Get out of bed  
+
+---
+
+## Buying a Domain  
+- Get in bed - Count sheep
+
+---
+
+
+## Fixing Project 3 
+- Turn off alarm - Get out of bed  
+
+---
+
+## Updating Project 4
+- Get in bed - Count sheep
+
+---
+
+
+## Site clean-up and tweaks 
+- Turn off alarm - Get out of bed  
+
+---
+
+## To-Do  
+- Get in bed - Count sheep
+
+---
+
