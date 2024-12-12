@@ -5,9 +5,15 @@ execute:
   message: true
 ---
 
-Using the "College tuition, diversity, and pay" data set, I will be analyzing the differences in cost/tuition between public and private schools. I will filter out the data in order to make a fair comparison between the two categories (e.g. schools in the same region), then compare the difference between their costs. Here is a link to my data set: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-03-10/readme.md
+Employing some fancier data science skills this week, I aim to create a Null Sampling distribution using the "College tuition, diversity, and pay" data set. I will be analyzing the differences in cost/tuition between public and private schools. I will filter out the data in order to make a fair comparison between the two categories (e.g. schools in the same region), then compare the difference between their costs.
 
-My research questions - Tuition rates are higher for private universities than for public universities Null claim: Tuition rates do not differ between public and private universities.
+Here is a citation for my data set:
+
+National Center for Education Statistics. 2024. Tuition Tracker. Integrated Postsecondary Education Data System (IPEDS). Retrieved from <https://www.tuitiontracker.org>
+
+"The Tuition Tracker dataset uses raw data from the U.S. Department of Education’s IPEDS to analyze tuition trends across U.S.-based, degree-granting institutions. Projected prices are based on historical trends from 2012-13 to 2022-23, adjusted using the compound annual growth rate and sticker prices. Net price projections consider average discount rates by income level."
+
+My research questions involve seeing whether tuition rates are higher for private universities than for public universities. My null hypothesis claim: Tuition rates do not differ between public and private universities.
 
 ```{r}
 #| echo: false
@@ -21,7 +27,7 @@ tuesdata <- tidytuesdayR::tt_load(2020, week = 11)
 tuition_cost <- tuesdata$tuition_cost
 ```
 
-I am only interested in the total cost for students attending schools in-state, in California. This way, the cost-of-living is fairly looked at (since comparing Californiaa schools with Maine schools, for example, would not be fair).
+I am only interested in the total cost for students attending schools in-state, in California. This way, the cost-of-living is fairly looked at (since comparing California schools with Maine schools, for example, would not be fair).
 
 ```{r}
 library(dplyr)

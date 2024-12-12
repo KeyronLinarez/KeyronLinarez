@@ -6,7 +6,13 @@ execute:
   message: true
 ---
 
-For this project, I will be manipulating the Wideband acoustic immittance SQL data base to make some observations on their results. I will practice by re-creating the graph displayed on their website, which 12 of their data sets graphed according to frequency. I will then pick a data set and compare the results between sex. Here is their official website/citation: doi.org/10.35482/egr.001.2022
+For this project, I will be manipulating the Wideband acoustic immittance SQL data base to make some observations on their results. SQL is really cool, and my data science skills in R transfer over really well here! I will practice by re-creating the graph displayed on their website, which 12 of their data sets graphed according to frequency. I will then pick a data set and compare the results between sex.
+
+Here is their official website/citation:
+
+Voss, Susan E., et al. Wideband Acoustic Immittance (WAI) Database. Smith College, 2022. National Institutes of Health, NIDCD. Dataset. <https://doi.org/10.35482/egr.001.2022.>
+
+"The Wideband Acoustic Immittance (WAI) Database is funded by the National Institutes of Health, NIDCD (R15 DC014129) and hosted on a server at Smith College. Contributors include researchers and students from Smith College and Amherst College."
 
 ```{r}
 #| echo: true

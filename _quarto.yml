@@ -15,6 +15,7 @@ website:
         menu:
         - mario_kart.qmd
         - curly_hair.qmd
+        - chess.qmd
         - project2.qmd
         - project3.qmd
         - wai.qmd

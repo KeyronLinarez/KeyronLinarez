@@ -5,11 +5,11 @@ execute:
   message: true
 ---
 
-I am practicing my data science and regular expression skills by working with a big data set!
+I am practicing my data science and regular expression skills by working with a bigger data set - and I plan on using regular expressions to quickly tidy up all of our data!
 
 I will be analyzing the Dear Abby data set. I found this data set very interesting due to its annonymous nature, especially since it has existed long before internet threads were commonplace. I performed two analyses - one on the titles, and another on the questions themseles.
 
-Here is where I retrieved my data: <https://github.com/the-pudding/data/blob/master/dearabby/raw_da_qs.csv>
+Here is where I retrieved my data: Blinderman, I., Ralph, C., & Samora, R. (2018). Dear Abby dataset: 30 years of American anxieties. The Pudding. Retrieved from <https://pudding.cool/2018/11/dearabby/>
 
 ```{r}
 #| echo: true

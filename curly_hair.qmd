@@ -10,6 +10,12 @@ execute:
 library(tidyverse)
 ```
 
+In an effort to improve my R skills, I'm practicing on some Tidy Tuesday data! I am using Diwali Sales data this time around, which I think will be interesting to map out. Here is some information about where the data for this week comes from:
+
+Saad Haroon. Kaggle. (2024). *Diwali Sales Dataset*. Retrieved from <https://www.kaggle.com/datasets/saadharoon27/diwali-sales-dataset/code>.
+
+"The data this week comes from sales data for a retail store during the Diwali festival period in India."
+
 Below, you will find a plot showcasing the number of purchases for different age groups during Diwali, the festival of lights. The color gradient shows the amount in Indian rupees spent by each customer, revealing how age group impacts total rupees spent with respect to total orders made.
 
 ```{r echo = T, results = 'hide'}
@@ -21,12 +27,13 @@ library(httr2)
 
 house <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-14/diwali_sales_data.csv')
 
+# Retrieving variables of interst
 colnames(house)
 age_group <- house$`Age Group`
 Orders <- house$Orders
 Amount <- house$Amount
 
-
+# plotting amount spent by age group with gg plot
 ggplot(data = house, aes(x = `Age Group`, y = Orders, color = Amount)) +
   geom_col() +   
   labs(

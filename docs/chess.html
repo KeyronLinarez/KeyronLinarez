@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Keyron Linarez">
 
-<title>Keyron Linarez - Diwali Sales Data</title>
+<title>Keyron Linarez - Regular Expressions - Chess Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -191,13 +192,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Diwali Sales Data</h1>
+<h1 class="title">Regular Expressions - Chess Analysis</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Keyron Linarez </p>
+          </div>
+  </div>
     
   
     
@@ -208,39 +215,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In an effort to improve my R skills, I’m practicing on some Tidy Tuesday data! I am using Diwali Sales data this time around, which I think will be interesting to map out. Here is some information about where the data for this week comes from:</p>
-<p>Saad Haroon. Kaggle. (2024). <em>Diwali Sales Dataset</em>. Retrieved from <a href="https://www.kaggle.com/datasets/saadharoon27/diwali-sales-dataset/code" class="uri">https://www.kaggle.com/datasets/saadharoon27/diwali-sales-dataset/code</a>.</p>
-<p>“The data this week comes from sales data for a retail store during the Diwali festival period in India.”</p>
-<p>Below, you will find a plot showcasing the number of purchases for different age groups during Diwali, the festival of lights. The color gradient shows the amount in Indian rupees spent by each customer, revealing how age group impacts total rupees spent with respect to total orders made.</p>
+<p>I am continuing my practice with regular expressions this week with Tidy Tuesday. Here is where the data is coming from, with some background:</p>
+<p>Chess Game Dataset (Lichess). 2024. <em>Chess Game Dataset (Lichess).</em> Retrieved from <a href="https://www.kaggle.com/datasets/datasnaek/chess/data" class="uri">https://www.kaggle.com/datasets/datasnaek/chess/data</a>.</p>
+<p>“This is a set of just over 20,000 games collected from a selection of users on the site Lichess.org, and how to collect more. I will also upload more games in the future as I collect them. This set contains the</p>
+<ul>
+<li><p>Game ID;</p></li>
+<li><p>Rated (T/F);</p></li>
+<li><p>Number of Turns;</p></li>
+<li><p>Winner;</p></li>
+<li><p>All Moves in Standard Chess Notation;</p></li>
+</ul>
+<p>For each of these separate games from Lichess.”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>house <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-14/diwali_sales_data.csv'</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the chess dataset from the TidyTuesday repository and clean the datalibrary(tidyr)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieving variables of interst</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(house)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>age_group <span class="ot">&lt;-</span> house<span class="sc">$</span><span class="st">`</span><span class="at">Age Group</span><span class="st">`</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Orders <span class="ot">&lt;-</span> house<span class="sc">$</span>Orders</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Amount <span class="ot">&lt;-</span> house<span class="sc">$</span>Amount</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting amount spent by age group with gg plot</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> house, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Age Group</span><span class="st">`</span>, <span class="at">y =</span> Orders, <span class="at">color =</span> Amount)) <span class="sc">+</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span>   </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Orders"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Diwali Orders Made by Age"</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="curly_hair_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>chess <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-10-01/chess.csv'</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">opening_main =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_detect</span>(opening_name, <span class="st">":"</span>) <span class="sc">~</span> <span class="fu">str_extract</span>(opening_name, <span class="st">".+?(?=:)"</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_detect</span>(opening_name, <span class="st">"</span><span class="sc">\\</span><span class="st">|"</span>) <span class="sc">~</span> <span class="fu">str_extract</span>(opening_name, <span class="st">".+?(?= </span><span class="sc">\\</span><span class="st">|)"</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_detect</span>(opening_name, <span class="st">"#"</span>) <span class="sc">~</span> <span class="fu">str_extract</span>(opening_name, <span class="st">".+?(?= #)"</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>           <span class="cn">TRUE</span> <span class="sc">~</span> opening_name))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Group the data by 'opening_main' to count the frequency of each opening</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>top_opening <span class="ot">&lt;-</span> chess <span class="sc">|&gt;</span> <span class="fu">group_by</span>(opening_main) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Summarize the data by counting occurrences of each opening</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">open_count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Summarize the data by counting occurrences of each opening</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(open_count)) <span class="sc">|&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sort the openings in descending order of frequency</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(open_count <span class="sc">&gt;</span> <span class="dv">500</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(opening_main) <span class="sc">|&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>top_opening</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Sicilian Defense"     "French Defense"       "Queen's Pawn Game"   
+ [4] "Italian Game"         "King's Pawn Game"     "Ruy Lopez"           
+ [7] "English Opening"      "Scandinavian Defense" "Philidor Defense"    
+[10] "Caro-Kann Defense"   </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the original dataset to include only rows with top openings</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>chess_top <span class="ot">&lt;-</span> chess <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(opening_main <span class="sc">%in%</span> top_opening)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>I am not too well versed in Chess, but it was super fun to see what some of the most widely used and successful openings are! Tidying this data wasn’t easy, but it was very informative on what kinds of issues we can come up with when working with big data.</p>
 
 
 

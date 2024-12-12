@@ -1,0 +1,59 @@
+---
+title: "Regular Expressions - Chess Analysis"
+author: Keyron Linarez
+execute: 
+  warning: false
+  message: true
+---
+
+I am continuing my practice with regular expressions this week with Tidy Tuesday. Here is where the data is coming from, with some background:
+
+Chess Game Dataset (Lichess). 2024. *Chess Game Dataset (Lichess).* Retrieved from <https://www.kaggle.com/datasets/datasnaek/chess/data>.
+
+"This is a set of just over 20,000 games collected from a selection of users on the site Lichess.org, and how to collect more. I will also upload more games in the future as I collect them. This set contains the
+
+-   Game ID;
+
+-   Rated (T/F);
+
+-   Number of Turns;
+
+-   Winner;
+
+-   All Moves in Standard Chess Notation;
+
+For each of these separate games from Lichess."
+
+```{r}
+library(tidyr)
+library(tidyverse)
+
+# Load the chess dataset from the TidyTuesday repository and clean the datalibrary(tidyr)
+library(tidyverse)
+
+chess <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-10-01/chess.csv') |>
+  mutate(opening_main = case_when(
+           str_detect(opening_name, ":") ~ str_extract(opening_name, ".+?(?=:)"),
+           str_detect(opening_name, "\\|") ~ str_extract(opening_name, ".+?(?= \\|)"),
+           str_detect(opening_name, "#") ~ str_extract(opening_name, ".+?(?= #)"),
+           TRUE ~ opening_name))
+
+# Group the data by 'opening_main' to count the frequency of each opening
+top_opening <- chess |> group_by(opening_main) |>
+  # Summarize the data by counting occurrences of each opening
+  summarize(open_count = n()) |>
+  # Summarize the data by counting occurrences of each opening
+  arrange(desc(open_count)) |>
+  # Sort the openings in descending order of frequency
+  filter(open_count > 500) |>
+  select(opening_main) |>
+  pull()
+
+top_opening
+
+# Filter the original dataset to include only rows with top openings
+chess_top <- chess |>
+  filter(opening_main %in% top_opening)
+```
+I am not too well versed in Chess, but it was super fun to see what some of the most widely used and successful openings are! Tidying this data wasn't easy, but it was very informative on what kinds of issues we can come up with when working with big data.
+
