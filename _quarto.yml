@@ -23,7 +23,9 @@ website:
 
 format:
   html:
-    theme: sandstone
+    theme: 
+      light: sandstone
+      dark: darkly
     css: styles.css
     toc: true
 
