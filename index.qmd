@@ -1,6 +1,6 @@
 ---
 title: "Keyron Linarez"
-image: cool-3.webp
+image: headshot.jpg
 toc: false
 about: 
   template: jolla
@@ -15,5 +15,4 @@ about:
       href: ksla2021@mymail.pomona.edu
 ---
 
-Hello! I am Keyron Linarez, a Computer Science and Math student attending Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!
-
+I am Keyron Linarez, a Computer Science and Math student attending Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!

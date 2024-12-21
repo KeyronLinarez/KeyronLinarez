@@ -20,14 +20,10 @@ website:
         - project3.qmd
         - wai.qmd
 
-      - text: Coding Projects
-        menu: 
-          - presentation.qmd
-        
 
 format:
   html:
-    theme: solar
+    theme: sandstone
     css: styles.css
     toc: true
 
