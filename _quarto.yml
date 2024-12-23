@@ -11,6 +11,9 @@ website:
         text: Home
       - about.qmd
       
+      - text: "Resume"
+        href: Klinarez_12_24.pdf
+      
       - text: Data Science Projects 
         menu:
         - mario_kart.qmd
@@ -19,6 +22,7 @@ website:
         - project2.qmd
         - project3.qmd
         - wai.qmd
+        
 
 
 format:
