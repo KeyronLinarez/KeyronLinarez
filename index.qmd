@@ -1,5 +1,5 @@
 ---
-title: "Keyron Linarez"
+title: "Rona Linarez"
 image: headshot.jpg
 toc: false
 about: 
@@ -8,11 +8,11 @@ about:
   image-width: 17em
   links:
     - text: LinkedIn
-      href: https://www.linkedin.com/in/keyron/
+      href: https://www.linkedin.com/in/keyrona/
     - text: GitHub
       href: https://github.com/KeyronLinarez
     - text: Email
-      href: ksla2021@mymail.pomona.edu
+      href: rona.rdx08@gmail.com
 ---
 
-I am Keyron Linarez, a Computer Science and Math student attending Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!
+I am Rona Linarez, a Computer Science and Math student graduate from Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!

@@ -4,7 +4,7 @@ project:
 
 
 website:
-  title: "Keyron Linarez"
+  title: "Rona Linarez"
   navbar:
     left:
       - href: index.qmd
@@ -12,9 +12,9 @@ website:
       - about.qmd
       
       - text: "Resume"
-        href: Klinarez_12_24.pdf
+        href: Rona_resume.pdf
       
-      - text: Data Science Projects 
+      - text: Blog
         menu:
         - mario_kart.qmd
         - curly_hair.qmd
@@ -23,7 +23,14 @@ website:
         - project3.qmd
         - wai.qmd
         
-
+      - text: Research
+        menu: 
+          - text: "Summer 2023"
+            href: WUSEF_Poster.pdf
+          - text: "Summer 2024"
+            href: SURP_Poster.pdf
+          - text: "Senior Thesis"
+            href: Senior_Thesis-25.pdf
 
 format:
   html:
@@ -35,3 +42,11 @@ format:
 
 editor: visual
 
+resources:
+  - Rona_resume.pdf
+  - WUSEF_Poster.pdf
+  - Senior_Thesis-25.pdf
+  - guitar2.JPG
+
+execute:
+  cache: true

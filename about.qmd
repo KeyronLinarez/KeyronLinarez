@@ -2,14 +2,14 @@
 title: "About Me"
 ---
 
-Hello, my name is Keyron (they/them), I am a current senior studying computer science at Pomona college. I am a first generation student and a Questbridge scholar, and I really love to learn. Currently, my main fixations are roller-blading, punk guitar and grinding F-Zero 99.
+Hello, my name is Rona! (I also go by Keyron) I am a recent computer science graduate from Pomona college. I am a first generation student and a Questbridge scholar, and I really love to learn. Currently, my main interests are Rust progamming, web development and the bay area punk rock scene.
 
-I am deeply interested in software engineering, art and education. I've had the immense privilege of pursuing all three at various points in my career. Before college, I worked closely with Next Generation Scholars to bring robotics and block-based programming classes to my community. Throughout college, I've worked on robotics and safe reinforcement learning for autonomous driving, User-Based Research and Data Mining, and lots of music! (I've been taking voice lessons for 2 years now, and was the Pomona College Band manager on Trumpet :))
+I am deeply interested in software engineering, art and education. I've had the immense privilege of pursuing all three at various points in my journey. Before college, I worked closely with Next Generation Scholars to bring robotics and block-based programming classes to my community. Throughout college, I've worked on robotics and safe reinforcement learning for autonomous driving, User-Based Research and Database managament, and lots of music! (I've been taking voice lessons for 2 years now, and was the Pomona College Band manager on Trumpet :))
 
-I've included some of my projects for you to see on my website: several of my research, data science, and programming projects from the last several years. Thanks for stopping by!
+I've included some of my work for you to see on my website: several of my research, data science, and programming projects from the last several years. Thanks for stopping by!
 
 ---
-image: guitar.JPG
+image: guitar2.JPG
 toc: false
 about: 
   template: jolla

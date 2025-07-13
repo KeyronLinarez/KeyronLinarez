@@ -20,11 +20,12 @@ My research questions involve seeing whether tuition rates are higher for privat
 library(tidyverse)
 library(purrr)
 
-tuesdata <- tidytuesdayR::tt_load('2020-03-10')
-tuesdata <- tidytuesdayR::tt_load(2020, week = 11)
+#tuesdata <- tidytuesdayR::tt_load('2020-03-10')
+#tuesdata <- tidytuesdayR::tt_load(2020, week = 11)
+tuition_cost <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-03-10/tuition_cost.csv')
 
 
-tuition_cost <- tuesdata$tuition_cost
+#tuition_cost <- tuesdata$tuition_cost
 ```
 
 I am only interested in the total cost for students attending schools in-state, in California. This way, the cost-of-living is fairly looked at (since comparing California schools with Maine schools, for example, would not be fair).
