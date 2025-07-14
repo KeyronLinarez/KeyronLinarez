@@ -15,4 +15,4 @@ about:
       href: rona.rdx08@gmail.com
 ---
 
-I am Rona Linarez, a Computer Science and Math student graduate from Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!
+I am Rona Linarez, a Computer Science and Math graduate from Pomona College. I have a deep love for programming, social justice movements, and music. Thanks for stopping by!

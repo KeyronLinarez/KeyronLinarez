@@ -13,7 +13,7 @@ image: guitar2.JPG
 toc: false
 about: 
   template: jolla
-  image-shape: rectangle
+  image-shape: rounded
   image-width: 35em
   image-title: Playing my acoustic :)
 ---
